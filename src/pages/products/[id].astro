@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import burgersData from '../../data/burgers.json';
+
+export function getStaticPaths() {
+  return burgersData.burgers.map(burger => ({
+    params: { id: burger.id.toString() },
+    props: { burger },
+  }));
+}
+
+const { burger } = Astro.props;
+---
+
+<Layout>
+  <div class="w-full min-h-screen bg-white p-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="relative">
+          <img 
+            transition:name={`image-${burger.id}`}
+            src={burger.image} 
+            alt={`Hamburguesa ${burger.title}`}
+            class="w-full rounded-lg shadow-lg object-cover aspect-square"
+          />
+        </div>
+        
+        <div class="flex flex-col justify-center">
+          <h1 class="text-4xl font-bold text-gray-900 mb-4" transition:name={`title-${burger.id}`}>{burger.title}</h1>
+          <p class="text-xl text-gray-600 mb-6">{burger.description}</p>
+          
+          <div class="border-t border-gray-200 pt-6 mt-auto">
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-3xl font-bold text-gray-900">${burger.price}</span>
+              <button class="bg-yellow-400 text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors duration-300">
+                Ordenar Ahora
+              </button>
+            </div>
+            
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h2 class="text-lg font-bold text-gray-900 mb-4">Detalles del producto</h2>
+              <ul class="space-y-2 text-gray-600">
+                <li>✓ Preparada al momento</li>
+                <li>✓ Ingredientes frescos</li>
+                <li>✓ Pan artesanal</li>
+                <li>✓ Incluye papas fritas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

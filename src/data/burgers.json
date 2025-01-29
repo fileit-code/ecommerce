@@ -1,0 +1,39 @@
+{
+    "burgers": [
+      {
+        "id": 1,
+        "title": "Clásica Deluxe",
+        "description": "Hamburguesa con queso cheddar, lechuga fresca, tomate, cebolla caramelizada y nuestra salsa especial de la casa",
+        "image": "/burger1.png",
+        "price": 12.99
+      },
+      {
+        "id": 2,
+        "title": "BBQ Bacon",
+        "description": "Carne jugosa con bacon crujiente, queso americano, aros de cebolla y salsa BBQ ahumada",
+        "image": "/burger2.png",
+        "price": 14.99
+      },
+      {
+        "id": 3,
+        "title": "Mexicana Picante",
+        "description": "Preparada con jalapeños, guacamole fresco, queso pepper jack, pico de gallo y salsa chipotle",
+        "image": "/burger3.png",
+        "price": 13.99
+      },
+      {
+        "id": 4,
+        "title": "Vegetariana Gourmet",
+        "description": "Hamburguesa de garbanzos y verduras, con rúcula, tomates secos, queso de cabra y pesto",
+        "image": "/burger4.png",
+        "price": 13.99
+      },
+      {
+        "id": 5,
+        "title": "Doble Cheese",
+        "description": "Doble carne, triple queso (cheddar, gouda y mozzarella), pepinillos y salsa secreta",
+        "image": "/burger5.png",
+        "price": 15.99
+      }
+    ]
+  }
